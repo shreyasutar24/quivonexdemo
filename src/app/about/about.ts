@@ -8,12 +8,12 @@ import { CommonModule } from '@angular/common';
 })
 export class About {
   stats = [
-    { value: '120+', label: 'Projects Delivered' },
-    { value: '80+', label: 'Happy Clients' },
-    { value: '9', label: 'Years of Experience' },
-    { value: '25+', label: 'Team Members' }
+    { value: '12+', label: 'Projects Delivered' },
+    { value: '8+', label: 'Happy Clients' },
+    { value: '3', label: 'Years of Experience' },
+    { value: '15+', label: 'Team Members' }
   ];
- 
+
   values = [
     {
       icon: 'ti-bulb',
@@ -31,7 +31,7 @@ export class About {
       description: 'We work as an extension of your team, prioritizing clear communication and shared goals.'
     }
   ];
- 
+
   team = [
     { photo: 'https://i.pravatar.cc/150?img=12', name: 'Aditi Kapoor', role: 'Founder & CEO' },
     { photo: 'https://i.pravatar.cc/150?img=33', name: 'Rohan Shah', role: 'Lead Engineer' },
