@@ -1,1 +1,71 @@
-<p>gallary works!</p>
+<section class="gallery-page">
+
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <!-- Split hero -->
+  <div class="hero-split">
+    <div class="hero-text">
+      <span class="tag">OUR WORK</span>
+      <h1>Projects that speak <span class="highlight">for themselves</span></h1>
+      <p>
+        A curated look at the platforms, apps, and brands we've shipped —
+        picked apart by the people who use them every day.
+      </p>
+
+      
+    </div>
+
+    <div class="hero-collage">
+      <img [src]="items[0].image" class="collage-img img-a" alt="" />
+      <img [src]="items[1].image" class="collage-img img-b" alt="" />
+      <img [src]="items[2].image" class="collage-img img-c" alt="" />
+    </div>
+  </div>
+
+  <!-- Underline tabs -->
+  <div class="tab-bar">
+    <button
+      *ngFor="let cat of categories"
+      class="tab-btn"
+      [class.active]="activeFilter === cat"
+      (click)="setFilter(cat)"
+    >
+      {{ cat }}
+    </button>
+  </div>
+
+  <!-- Bento grid -->
+  <div class="bento-grid">
+    <div
+      class="bento-card"
+      [class.feature]="i === 0"
+      *ngFor="let item of filteredItems; let i = index"
+      [style.animation-delay.ms]="i * 70"
+      (click)="openLightbox(item)"
+    >
+      <img [src]="item.image" [alt]="item.title" loading="lazy" />
+      <div class="bento-overlay">
+        <span class="bento-category">{{ item.category }}</span>
+        <h4>{{ item.title }}</h4>
+      </div>
+      <div class="bento-badge"><i class="ti ti-arrow-up-right"></i></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" *ngIf="activeItem" (click)="closeLightbox()">
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="lightbox-close" (click)="closeLightbox()"><i class="ti ti-x"></i></button>
+      <img [src]="activeItem.image" [alt]="activeItem.title" />
+      <div class="lightbox-info">
+        <span class="bento-category">{{ activeItem.category }}</span>
+        <h3>{{ activeItem.title }}</h3>
+        <p>{{ activeItem.description }}</p>
+      </div>
+      <button class="lightbox-nav prev" (click)="prevItem()"><i class="ti ti-chevron-left"></i></button>
+      <button class="lightbox-nav next" (click)="nextItem()"><i class="ti ti-chevron-right"></i></button>
+    </div>
+  </div>
+
+</section>
