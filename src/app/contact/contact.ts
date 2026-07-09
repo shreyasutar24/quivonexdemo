@@ -16,15 +16,16 @@ export class Contact {
   contactForm!: FormGroup;
 
   contactInfo = [
-    { title: 'Email Us', value: 'hello@quivonex.com', icon: 'ti-mail' },
-    { title: 'Call Us', value: '+1 (555) 123-4567', icon: 'ti-phone' },
-    { title: 'Visit Us', value: '123 Tech Park, San Francisco, CA', icon: 'ti-map-pin' }
+    { title: 'Email Us', value: 'quivonexsolutions@gmail.com', icon: 'ti-mail' },
+    { title: 'Call Us', value: '(+91) 9226859922 (Toll Free)', icon: 'ti-phone' },
+    { title: 'Visit Us', value: '402,Shri Datta Lakxmi Banglow,Shri Krishna Colony Dhangarwadi Old MIDC Kodoli, Satara, Maharashtra 415004', icon: 'ti-map-pin' }
   ];
 
-  socials = [
-    { icon: 'ti-brand-facebook' },
-    { icon: 'ti-brand-twitter' },
-    { icon: 'ti-brand-instagram' }
+  socials: { icon: string; url: string }[] = [
+    { icon: 'ti-brand-facebook', url: 'https://www.facebook.com/people/Quivonex-Solutions/61588563381546/' },
+    { icon: 'ti-brand-whatsapp', url: 'https://api.whatsapp.com/send/?phone=919226859922&text&type=phone_number&app_absent=0' },
+    { icon: 'ti-brand-instagram', url: 'https://www.instagram.com/qnxsolutions/' }
+
   ];
 
   constructor(private fb: FormBuilder) {
