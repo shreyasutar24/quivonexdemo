@@ -1,0 +1,338 @@
+/* ===== About Us Page — Quivonex Theme ===== */
+
+:host {
+  --bg-dark: #0d0b1e;
+  --purple-1: #7c5cff;
+  --purple-2: #a78bfa;
+  --purple-glow: #6d4dfb;
+  --text-light: #f5f4ff;
+  --text-muted: #b8b3d1;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  display: block;
+}
+
+.about-page {
+  position: relative;
+  background: radial-gradient(ellipse at top, #1a1633 0%, var(--bg-dark) 60%);
+  color: var(--text-light);
+  padding: 100px 8% 120px;
+  overflow: hidden;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Background glow accents */
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  z-index: 0;
+  pointer-events: none;
+}
+.glow-1 {
+  width: 420px;
+  height: 420px;
+  background: var(--purple-glow);
+  top: -100px;
+  left: -100px;
+}
+.glow-2 {
+  width: 380px;
+  height: 380px;
+  background: #4c2fd6;
+  top: 700px;
+  right: -100px;
+}
+
+/* ===== Header ===== */
+.about-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.tag,
+.sub-tag {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid var(--purple-1);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--purple-2);
+  background: rgba(124, 92, 255, 0.08);
+  margin-bottom: 20px;
+}
+
+.about-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px;
+}
+
+.highlight {
+  background: linear-gradient(90deg, var(--purple-1), var(--purple-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-header p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ===== Stats ===== */
+.stats-row {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 110px;
+}
+
+@media (max-width: 760px) {
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat-card {
+  text-align: center;
+  padding: 26px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple-1);
+}
+
+.stat-card h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, var(--purple-1), var(--purple-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== Story ===== */
+.story-section {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1050px;
+  margin: 0 auto 120px;
+}
+
+@media (max-width: 820px) {
+  .story-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.visual-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.15), rgba(87, 50, 224, 0.05));
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-card i {
+  font-size: 64px;
+  color: var(--purple-2);
+}
+
+.story-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+
+.story-text p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 16px;
+}
+
+/* ===== Section heading (shared) ===== */
+.section-heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 46px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ===== Values ===== */
+.values-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: 0 auto 120px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 820px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  padding: 28px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple-1);
+  background: rgba(124, 92, 255, 0.08);
+}
+
+.value-card .icon-wrap {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--purple-1), #5732e0);
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.value-card .icon-wrap i {
+  font-size: 20px;
+}
+
+.value-card h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.value-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===== Team ===== */
+.team-section {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+  margin: 0 auto 120px;
+}
+ 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+ 
+@media (max-width: 820px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+.team-card {
+  text-align: center;
+  padding: 30px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+ 
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple-1);
+}
+ 
+.avatar {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-soft);
+  display: block;
+  transition: border-color 0.25s ease;
+}
+ 
+.team-card:hover .avatar {
+  border-color: var(--purple-1);
+}
+ 
+.team-card h4 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+ 
+.team-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+/* ===== CTA ===== */
+
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

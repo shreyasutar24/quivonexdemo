@@ -1,0 +1,319 @@
+/* ===== Contact Page — Quivonex Theme ===== */
+
+:host {
+    --bg-dark: #0d0b1e;
+    --bg-darker: #08061460;
+    --purple-1: #7c5cff;
+    --purple-2: #a78bfa;
+    --purple-glow: #6d4dfb;
+    --text-light: #f5f4ff;
+    --text-muted: #b8b3d1;
+    --border-soft: rgba(255, 255, 255, 0.08);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    display: block;
+}
+
+.contact-page {
+    position: relative;
+    background: radial-gradient(ellipse at top, #1a1633 0%, var(--bg-dark) 60%);
+    color: var(--text-light);
+    padding: 100px 8% 120px;
+    overflow: hidden;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Background glow accents */
+.bg-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.glow-1 {
+    width: 420px;
+    height: 420px;
+    background: var(--purple-glow);
+    top: -100px;
+    left: -100px;
+}
+
+.glow-2 {
+    width: 380px;
+    height: 380px;
+    background: #4c2fd6;
+    bottom: -80px;
+    right: -80px;
+}
+
+/* ===== Header ===== */
+.contact-header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 70px;
+    animation: fadeInUp 0.6s ease both;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid var(--purple-1);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--purple-2);
+    background: rgba(124, 92, 255, 0.08);
+    margin-bottom: 20px;
+}
+
+.contact-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 16px;
+}
+
+.contact-header .highlight {
+    background: linear-gradient(90deg, var(--purple-1), var(--purple-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-header p {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ===== Layout ===== */
+.contact-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 860px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Info Cards ===== */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    animation: fadeInUp 0.6s ease both;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--purple-1);
+    background: rgba(124, 92, 255, 0.08);
+}
+
+.icon-wrap {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--purple-1), #5732e0);
+    color: #fff;
+}
+
+.icon-wrap i {
+    font-size: 20px;
+}
+
+.info-text h4 {
+    margin: 0 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.info-text p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Socials */
+.social-block {
+    margin-top: 10px;
+    padding: 22px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+}
+
+.social-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 14px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.social-btn:hover {
+    background: var(--purple-1);
+    border-color: var(--purple-1);
+    transform: translateY(-3px);
+}
+
+.social-btn i {
+    font-size: 16px;
+}
+
+/* ===== Form ===== */
+.contact-form-wrap {
+    padding: 34px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-soft);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    animation: fadeInUp 0.7s ease both;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 560px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 13px 16px;
+    color: var(--text-light);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    resize: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #6f6a8a;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--purple-1);
+    background: rgba(124, 92, 255, 0.06);
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.15);
+}
+
+/* Submit button */
+.submit-btn {
+    margin-top: 6px;
+    padding: 14px 0;
+    border: none;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, var(--purple-1), #5732e0);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(124, 92, 255, 0.5);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.success-msg {
+    text-align: center;
+    color: #7ef2a8;
+    font-size: 14px;
+    margin: 0;
+    animation: fadeInUp 0.4s ease both;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
